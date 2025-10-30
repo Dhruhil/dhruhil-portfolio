@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhruhil Patel Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #0f172a; color: #e2e8f0; }
+    a { transition: 0.3s; }
+    
+    /* Global Section Padding */
+    .section-padding {
+        padding-top: 80px; 
+        padding-bottom: 96px; 
+    }
+
+    /* Fixed Header Anchor Offset */
+    #about, #skills, #projects, #experience, #certifications, #contact {
+      scroll-margin-top: 65px; 
+    }
+
+  </style>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+<body class="font-sans">
+
+  <!-- Header / Navbar -->
+<!-- Header / Navbar -->
+<nav class="fixed w-full z-50 bg-gray-900/90 backdrop-blur shadow-lg">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+   <a href="#" class="flex items-center justify-center w-12 h-12 relative">
+  <!-- <div class="absolute w-full h-full rounded-full border-2 border-cyan-400 animate-ping duration-[3000ms]"></div> -->
+  <!-- <div class="absolute w-full h-full rounded-full border-2 border-cyan-400 opacity-50 animate-ping delay-200 duration-[3000ms]"></div> -->
+  <div class="relative w-10 h-10 bg-cyan-400 rounded-full flex items-center justify-center text-gray-900 font-bold text-lg shadow-lg animate-pulse">
+    DP
+  </div>
+</a>
+
+    <!-- Navigation links (desktop) -->
+    <div class="hidden md:flex space-x-6 text-gray-300 font-medium">
+      <a href="#about" class="hover:text-cyan-400 transition-colors duration-300">About</a>
+      <a href="#skills" class="hover:text-cyan-400 transition-colors duration-300">Skills</a>
+      <a href="#projects" class="hover:text-cyan-400 transition-colors duration-300">Projects</a>
+      <a href="#experience" class="hover:text-cyan-400 transition-colors duration-300">Experience</a>
+      <a href="#certifications" class="hover:text-cyan-400 transition-colors duration-300">Certifications</a>
+      <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300">Contact</a>
+    </div>
+
+    <!-- Mobile menu button -->
+    <div class="md:hidden flex items-center">
+      <button id="menu-btn" class="text-gray-300 focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu (hidden by default) -->
+  <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-3 text-gray-300 font-medium bg-gray-900/95">
+    <a href="#about" class="block hover:text-cyan-400 transition-colors duration-300">About</a>
+    <a href="#skills" class="block hover:text-cyan-400 transition-colors duration-300">Skills</a>
+    <a href="#projects" class="block hover:text-cyan-400 transition-colors duration-300">Projects</a>
+    <a href="#experience" class="block hover:text-cyan-400 transition-colors duration-300">Experience</a>
+    <a href="#certifications" class="block hover:text-cyan-400 transition-colors duration-300">Certifications</a>
+    <a href="#contact" class="block hover:text-cyan-400 transition-colors duration-300">Contact</a>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+
+  <section class="h-screen relative flex flex-col justify-center items-center bg-gradient-to-r from-cyan-700 to-purple-900 text-white overflow-hidden">
+    
+    <div id="tsparticles" class="absolute top-0 left-0 w-full h-full z-0"></div>
+    
+    <div class="relative z-10 text-center">
+      <h1 class="text-6xl font-bold mb-4 animate__animated animate__fadeInDown">Hi, I'm Dhruhil Patel</h1>
+      
+      <p class="text-2xl mb-6 h-8">
+        <span id="typed-output"></span>
+      </p>
+      
+      <a href="#about" class="px-8 py-3 bg-cyan-400 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-cyan-500 animate__animated animate__fadeInUp">Discover More</a>
+    </div>
+  </section>
+
+<section id="about" class="max-w-7xl mx-auto px-6 py-16">
+    
+  <!-- Section Heading -->
+  <h2 class="text-5xl font-bold text-center mb-12 text-cyan-400 animate__animated animate__fadeInDown">
+    About Me
+  </h2>
+
+  <div class="grid lg:grid-cols-3 gap-8 items-start">
+
+    <!-- Profile Picture (Height matches paragraph) -->
+    <div class="flex justify-center">
+      <img src="/assets/Dhruhil_pic-DdgMknN6.png" alt="Dhruhil Patel" 
+           class="rounded-lg shadow-xl border-2 border-cyan-400 h-full max-h-[380px] object-cover">
+    </div>
+
+    <!-- About Text (Animated) -->
+    <div class="text-lg space-y-4 animate__animated animate__fadeInLeft">
+      <p>
+        Highly motivated and detail-oriented Master’s student in Artificial Intelligence with a strong foundation in data analysis, 
+        machine learning, deep learning, and statistical modeling. Skilled in data preprocessing, exploratory data analysis (EDA), 
+        predictive modeling, and visualization using Python, R, and SQL. Experienced in applying analytical methods to real-world 
+        datasets across agriculture, environment, and business domains. Former web developer with strong programming and problem-solving skills, 
+        now focused on driving data-driven decision-making and AI-powered insights.
+      </p>
+    </div>
+
+    <!-- Education Cards (Animated, Compact) -->
+    <div class="space-y-6 animate__animated animate__fadeInRight">
+      <!-- Master’s Card with Current Badge -->
+      <div class="bg-gray-800 p-4 rounded-xl shadow-xl border border-cyan-400">
+        <div class="flex items-center gap-3">
+          <h4 class="text-xl font-semibold text-cyan-300">Master’s in Artificial Intelligence</h4>
+          <span class="bg-cyan-200 text-cyan-800 text-xs font-medium px-2 py-0.5 rounded">Current</span>
+        </div>
+        <p class="text-gray-400 mt-1">Jönköping University, Sweden</p>
+        <p class="text-gray-300 mt-1">Aug 2024 – Jun 2026</p>
+      </div>
+
+      <!-- Bachelor Card -->
+      <div class="bg-gray-800 p-4 rounded-xl shadow-xl border border-cyan-400">
+        <h4 class="text-xl font-semibold text-cyan-300">Bachelor of Engineering in IT</h4>
+        <p class="text-gray-400 mt-1">Silver Oak College of Engineering, India</p>
+        <p class="text-gray-300 mt-1">Jun 2018 – Jun 2022</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills" class="bg-gray-900 py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-5xl font-bold text-center mb-16 text-cyan-400">
+      Skills
+    </h2>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+      <a href="https://www.iso.org/standard/74528.html" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="C">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">C</p>
+      </a>
+
+      <a href="https://isocpp.org/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="C++">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">C++</p>
+      </a>
+
+      <a href="https://www.python.org/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Python">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">Python</p>
+      </a>
+
+      <a href="https://www.php.net/manual/en/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="PHP">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">PHP</p>
+      </a>
+
+      <a href="https://www.r-project.org/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://www.r-project.org/logo/Rlogo.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="R">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">R</p>
+      </a>
+
+      <a href="https://www.swi-prolog.org/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://www.svgrepo.com/show/372928/prolog.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Prolog">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">Prolog</p>
+      </a>
+
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="HTML">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">HTML</p>
+      </a>
+
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="CSS">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">CSS</p>
+      </a>
+
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="JavaScript">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">JavaScript</p>
+      </a>
+
+      <a href="https://www.w3schools.com/sql/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="SQL">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">SQL</p>
+      </a>
+
+      <a href="https://laravel.com/docs" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://laravel.com/img/logomark.min.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Laravel">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">Laravel</p>
+      </a>
+
+      <a href="https://docs.djangoproject.com/en/stable/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Django">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">Django</p>
+      </a>
+
+      <a href="https://flask.palletsprojects.com/en/latest/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Flask">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">Flask</p>
+      </a>
+
+      <a href="https://api.jquery.com/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="jQuery">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">jQuery</p>
+      </a>
+
+      <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Bootstrap">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">Bootstrap</p>
+      </a>
+
+      <a href="https://scikit-learn.org/stable/documentation.html" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Scikit-learn">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">Scikit-learn</p>
+      </a>
+
+      <a href="https://www.tensorflow.org/api_docs" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="TensorFlow">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">TensorFlow</p>
+      </a>
+
+      <a href="https://pytorch.org/docs/stable/index.html" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://pytorch.org/assets/images/pytorch-logo.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="PyTorch">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">PyTorch</p>
+      </a>
+
+      <a href="https://pandas.pydata.org/docs/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://pandas.pydata.org/static/img/pandas_mark.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Pandas">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">Pandas</p>
+      </a>
+
+      <a href="https://numpy.org/doc/stable/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://numpy.org/images/logo.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="NumPy">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">NumPy</p>
+      </a>
+
+      <a href="https://matplotlib.org/stable/index.html" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Matplotlib">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">Matplotlib</p>
+      </a>
+
+      <a href="https://dev.mysql.com/doc/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="MySQL">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">MySQL</p>
+      </a>
+
+      <a href="https://www.postgresql.org/docs/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://www.postgresql.org/media/img/about/press/elephant.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="PostgreSQL">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">PostgreSQL</p>
+      </a>
+
+      <a href="https://www.w3.org/TR/sparql11-query/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="/assets/SPARQL_logo-CazXJldN.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="SPARQL">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">SPARQL</p>
+      </a>
+
+      <a href="https://git-scm.com/doc" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Git">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">Git</p>
+      </a>
+
+      <a href="https://docs.github.com/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="GitHub">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">GitHub</p>
+      </a>
+
+      <a href="https://learning.postman.com/docs/getting-started/introduction/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Postman">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">Postman</p>
+      </a>
+
+      <a href="https://jupyter.org/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Jupyter Notebook">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">Jupyter Notebook</p>
+      </a>
+
+      <a href="https://www.knime.com/documentation" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+        <img src="/assets/Knime_logo2-DLL9Ygfy.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="KNIME">
+        <p class="text-gray-300 font-semibold hover:text-cyan-400">KNIME</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section id="projects" class="bg-gray-900 section-padding">
+  <h2 class="text-5xl font-bold text-center mb-12 text-cyan-400">Projects</h2>
+
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+
+    <!-- 1️⃣ DQN Snake Game -->
+    <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
+                hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
+      <div class="w-full h-64 flex justify-center items-center bg-black">
+        <img src="/assets/Snake_game-BP2AgJu1.png" alt="DQN Snake Game"
+             class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
+      </div>
+      <!-- 🧠 Transparent overlay -->
+      <div class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
+                  group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between 
+                  items-center text-center p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-gray-800">
+        <div>
+          <h3 class="text-2xl font-bold text-cyan-300 mb-3">Comparative Study of DQN Variants for the Snake Game</h3>
+          <p class="text-gray-300 mb-6">
+            I developed a Snake game agent using Vanilla, Double, and Dueling DQNs, and found that Dueling DQN learns the most efficiently, achieving the highest scores with stable performance.
+          </p>
+        </div>
+        <a href="https://github.com/Dhruhil/Comparative-Study-of-DQN-Variants-for-the-Snake-Game" target="_blank"
+           class="mt-4 px-4 py-2 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow">GitHub</a>
+      </div>
+    </div>
+
+    <!-- 2️⃣ YOLOv8 Pallet Detection -->
+    <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
+                hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
+      <div class="w-full h-64 flex justify-center items-center bg-black">
+        <img src="/assets/yolov8-B7C7muqB.jpg" alt="YOLOv8 Pallet Detection"
+             class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
+      </div>
+      <div class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
+                  group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between 
+                  items-center text-center p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-gray-800">
+        <div>
+          <h3 class="text-2xl font-bold text-cyan-300 mb-3">Deep Learning-Based Detection of Wooden Pallets in Images Using YOLOv8</h3>
+          <p class="text-gray-300 mb-6">
+            I built a real-time YOLOv8 model to automatically detect and classify EUR and non-EUR pallets, achieving 88% mAP@50 and reliable edge deployment for scalable warehouse automation.
+          </p>
+        </div>
+        <!-- <a href="https://github.com/yourusername/yolov8-pallet-detection" target="_blank"
+           class="mt-4 px-4 py-2 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow">GitHub</a> -->
+      </div>
+    </div>
+
+    <!-- 3️⃣ Pest Prediction -->
+    <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
+                hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
+      <div class="w-full h-64 flex justify-center items-center bg-black">
+        <img src="/assets/Jorbru_image-BZR7KEE9.png" alt="Pest Prediction"
+             class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
+      </div>
+      <div class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
+                  group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between 
+                  items-center text-center p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-gray-800">
+        <div>
+          <h3 class="text-2xl font-bold text-cyan-300 mb-3">Jordbrukverket 7/14 Day Pest Prediction</h3>
+          <p class="text-gray-300 mb-6">
+            Built a machine learning pipeline using XGBoost, neural ensembles, and neuroevolution to forecast leaf-spot fungus in winter wheat. Achieved up to R² = 0.81 for 7-day forecasts and R² = 0.67 for 14-day forecasts, leveraging high-resolution NOAA GFS weather data to optimize pest management.
+        </div>
+        <a href="https://github.com/Dhruhil/Jordbrukverket-7-14-day-pest-prediction" target="_blank"
+           class="mt-4 px-4 py-2 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow">GitHub</a>
+      </div>
+    </div>
+
+    <!-- 4️⃣ PLASTISENSE -->
+    <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
+                hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
+      <div class="w-full h-64 flex justify-center items-center bg-black">
+        <img src="/assets/Plastisense_logo-DSVNTGs7.png" alt="Plastisense Project"
+             class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
+      </div>
+      <div class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
+                  group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between 
+                  items-center text-center p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-gray-800">
+        <div>
+          <h3 class="text-2xl font-bold text-cyan-300 mb-3">PLASTISENSE AI-based Plastic Waste Detection System</h3>
+          <p class="text-gray-300 mb-6">
+            Developed PlastiSense, an AI system using XGBoost to detect plastic contamination in water bodies in real time, with automated email alerts to authorities.
+          </p>
+        </div>
+        <a href="https://github.com/Dhruhil/Plastisense" target="_blank"
+           class="mt-4 px-4 py-2 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow">GitHub</a>
+      </div>
+    </div>
+
+    <!-- 5️⃣ Movie Recommendation -->
+    <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
+                hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
+      <div class="w-full h-64 flex justify-center items-center bg-black">
+        <img src="/assets/Movie_pic-CQGoC5LT.png" alt="Movie Recommendation System"
+             class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
+      </div>
+      <div class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
+                  group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between 
+                  items-center text-center p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-gray-800">
+        <div>
+          <h3 class="text-2xl font-bold text-cyan-300 mb-3">Movie Recommendation System Leveraging Semantic Web and Knowledge Graphs</h3>
+          <p class="text-gray-300 mb-6">
+            Built a movie recommendation system using knowledge graphs and Semantic Web. Provides personalized suggestions based on actors, directors, genres, and IMDb ratings via an interactive drag-and-drop interface.
+          </p>
+        </div>
+        <a href="https://github.com/Dhruhil/Movie-Recommendations-System" target="_blank"
+           class="mt-4 px-4 py-2 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow">GitHub</a>
+      </div>
+    </div>
+
+    <!-- 6️⃣ Ebit Profit Analysis -->
+    <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
+                hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
+      <div class="w-full h-64 flex justify-center items-center bg-black">
+        <img src="/assets/KNIME-CBQC_p_m.png" alt="Ebit Profit Analysis"
+             class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
+      </div>
+      <div class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
+                  group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between 
+                  items-center text-center p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-gray-800">
+        <div>
+          <h3 class="text-2xl font-bold text-cyan-300 mb-3">Unveiling Profit Drivers and Industry Insights for Ebit Company</h3>
+          <p class="text-gray-300 mb-6">
+            Analyzed Ebit’s client and industry data using K-means clustering and a custom client-score formula. Identified profitability drivers, high-performing industries, and optimal client engagement strategies with actionable insights via KNIME workflow.
+          </p>
+        </div>
+        <!-- <a href="https://github.com/yourusername/ebit-profit-analysis" target="_blank"
+           class="mt-4 px-4 py-2 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow">GitHub</a> -->
+      </div>
+    </div>
+
+    <!-- 7️⃣ Cocoon E-commerce -->
+    <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
+                hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
+      <div class="w-full h-64 flex justify-center items-center bg-black">
+        <img src="/assets/Coocon_pic-CnGidtKM.png" alt="Cocoon E-commerce"
+             class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
+      </div>
+      <div class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
+                  group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between 
+                  items-center text-center p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-gray-800">
+        <div>
+          <h3 class="text-2xl font-bold text-cyan-300 mb-3">Cocoon – E-commerce Shoe Store</h3>
+          <p class="text-gray-300 mb-6">
+            Dynamic e-commerce platform with product filtering, live cart, Stripe payments, user authentication, and admin panel.
+          </p>
+        </div>
+        <!-- <a href="https://github.com/yourusername/cocoon-ecommerce" target="_blank"
+           class="mt-4 px-4 py-2 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow">GitHub</a> -->
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <section id="experience" class="bg-gray-900 section-padding">
+    <h2 class="text-5xl font-bold text-center mb-12 text-cyan-400">Experience</h2>
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+
+      <div class="bg-gray-800 p-6 rounded-xl shadow-xl transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <img src="/assets/GCRI_logo-Ct-RpjyY.jpeg" alt="Gujarat Cancer & Research Institute" class="w-12 h-12 mr-3 rounded-full bg-white">
+          <div>
+            <h3 class="text-xl font-semibold text-cyan-300">Computer Engineer</h3>
+            <p class="text-gray-400">Gujarat Cancer & Research Institute</p>
+          </div>
+        </div>
+        <p class="text-gray-300 mb-2">Mar 2024 - Jun 2024 | Gujarat, India</p>
+        <p class="text-gray-300">Responsible for managing and optimizing computer systems to ensure reliable performance.</p>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-xl shadow-xl transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <img src="/assets/Helicore_logo-B2P8umKE.jpeg" alt="Helicore Info Pvt Ltd" class="w-12 h-12 mr-3 rounded-full bg-white">
+          <div>
+            <h3 class="text-xl font-semibold text-cyan-300">Web Developer</h3>
+            <p class="text-gray-400">Helicore Info Pvt Ltd</p>
+          </div>
+        </div>
+        <p class="text-gray-300 mb-2">Aug 2022 - Aug 2023 | Gujarat, India</p>
+        <p class="text-gray-300">Focused on IT integration, problem solving, and full-stack web development projects. Skills applied: HTML, CSS, JavaScript, PHP, MySQL.</p>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-xl shadow-xl transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <img src="data:image/png;base64,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" alt="iCreative Technologies" class="w-12 h-12 mr-3 rounded-full bg-white">
+          <div>
+            <h3 class="text-xl font-semibold text-cyan-300">Trainee PHP (Internship)</h3>
+            <p class="text-gray-400">iCreative Technologies</p>
+          </div>
+        </div>
+        <p class="text-gray-300 mb-2">Feb 2022 - Jul 2022 | Gujarat, India</p>
+        <p class="text-gray-300">Developed dynamic web applications, integrated payment gateways, and optimized front-end performance using PHP, Laravel, and JavaScript.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="certifications" class="bg-gray-900 section-padding"> 
+    <h2 class="text-5xl font-bold text-center mb-12 text-cyan-400">Licenses & Certifications</h2>
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+
+      <div class="bg-gray-800 p-6 rounded-xl shadow-xl transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <img src="/assets/knime_logo-R250v7uE.png" alt="KNIME" class="w-12 h-12 mr-3 rounded-full bg-white">
+          <div>
+            <h3 class="text-xl font-semibold text-cyan-300">Basic Proficiency in KNIME Analytics Platform</h3>
+            <p class="text-gray-400">KNIME | Issued Oct 2025</p>
+          </div>
+        </div>
+        <p class="text-gray-300 mb-2">Certification demonstrating foundational skills in KNIME Analytics Platform, including data import, ETL workflow design, data preprocessing, visualization components, and basic reporting techniques.</p>
+        <!-- <p class="text-gray-400 mt-2"><strong>Skills:</strong> Data Analysis, ETL, Data Visualization, KNIME, Data Science</p> -->
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-xl shadow-xl transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <img src="data:image/jpeg;base64,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" alt="PADC" class="w-12 h-12 mr-3 rounded-full bg-white">
+
+          <div>
+            <h3 class="text-xl font-semibold text-cyan-300">Certified Python Developer Associate</h3>
+            <p class="text-gray-400">PADCP | Issued Mar 2024</p>
+          </div>
+        </div>
+        <p class="text-gray-300 mb-2">Demonstrates proficiency in Python programming, including object-oriented programming, data handling, and basic application development.</p>
+        <!-- <p class="text-gray-400 mt-2"><strong>Skills:</strong> Python</p> -->
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-xl shadow-xl transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <img src="/assets/Tops_logo-CVScaK0-.jpeg" alt="Masters in Computer Science" class="w-12 h-12 mr-3 rounded-full bg-white">
+          <div>
+            <h3 class="text-xl font-semibold text-cyan-300">Masters in Computer Science</h3>
+            <p class="text-gray-400">TOPS Technologies Pvt. Ltd | Issued Sep 2023</p>
+          </div>
+        </div>
+        <p class="text-gray-300 mb-2">Advanced knowledge in programming languages, web development, and full-stack development gained through a Master’s in Computer Science, enabling the creation of efficient, scalable, and user-friendly applications.</p>
+        <!-- <p class="text-gray-400 mt-2"><strong>Skills:</strong> Python, Django REST, Laravel, HTML, CSS, JavaScript, MySQL, OOP, Data Structures & Algorithms</p> -->
+      </div>
+
+    </div>
+  </section>
+
+ <section id="contact" class="max-w-7xl mx-auto px-6 text-center section-padding">
+  <h2 class="text-5xl font-bold mb-8 text-cyan-400">Contact</h2>
+  <p class="mb-4 text-lg text-gray-300">
+    Gmail: <a href="mailto:pateldhruhil2612@gmail.com" class="text-cyan-400 underline hover:text-cyan-300">pateldhruhil2612@gmail.com</a>
+  </p>
+  <p class="mb-4 text-lg text-gray-300">
+    GitHub: <a href="https://github.com/Dhruhil" target="_blank" class="text-cyan-400 underline hover:text-cyan-300">https://github.com/Dhruhil</a>
+  </p>
+</section>
+
+
+
+  <footer class="bg-gray-800 py-6 text-center text-gray-400">
+    <p>&copy; 2025 Dhruhil Patel. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+  <script>
+    // 1. Typed.js (for the hero subtitle)
+    var options = {
+      strings: [
+        'AI Master’s Student',
+        'Machine Learning and Deep Learning Enthusiast',
+        'Data Science', 
+        'Web Developer',
+        'Full-Stack Developer'
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true,
+      showCursor: true,
+      cursorChar: '_',
+    };
+    var typed = new Typed('#typed-output', options);
+
+    // 2. tsParticles (for the hero background)
+    tsParticles.load("tsparticles", {
+      fpsLimit: 60,
+      interactivity: {
+        events: {
+          onHover: {  
+            enable: true,
+            mode: "repulse", // 'grab', 'bubble', 'repulse'
+          },
+          resize: true,
+        },
+        modes: {
+          repulse: {
+            distance: 100,
+            duration: 0.4,
+          },
+        },
+      },
+      particles: {
+        color: {
+          value: "#22d3ee", // Theme's cyan-400 color
+        },
+        links: {
+          color: "#ffffff",
+          distance: 150,
+          enable: true,
+          opacity: 0.3,
+          width: 1,
+        },
+        collisions: {
+          enable: true,
+        },
+        move: {
+          direction: "none",
+          enable: true,
+          outModes: {
+            default: "bounce",
+          },
+          random: false,
+          speed: 1.5, // Slower speed
+          straight: false,
+        },
+        number: {
+          density: {
+            enable: true,
+            area: 800,
+          },
+          value: 60, // Fewer particles
+        },
+        opacity: {
+          value: 0.3,
+        },
+        shape: {
+          type: "circle",
+        },
+        size: {
+          value: { min: 1, max: 5 },
+        },
+      },
+      detectRetina: true,
+    });
+  </script>
+</body>
+</html>
