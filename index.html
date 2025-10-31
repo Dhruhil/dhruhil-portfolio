@@ -1,458 +1,616 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dhruhil Patel Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    html { scroll-behavior: smooth; }
-    body { background: #0f172a; color: #e2e8f0; }
-    a { transition: 0.3s; }
-    
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    a {
+      transition: 0.3s;
+    }
+
     /* Global Section Padding */
     .section-padding {
-        padding-top: 80px; 
-        padding-bottom: 96px; 
+      padding-top: 80px;
+      padding-bottom: 96px;
     }
 
     /* Fixed Header Anchor Offset */
-    #about, #skills, #projects, #experience, #certifications, #contact {
-      scroll-margin-top: 65px; 
+    #about,
+    #skills,
+    #projects,
+    #experience,
+    #certifications,
+    #contact {
+      scroll-margin-top: 65px;
     }
-
   </style>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
+
 <body class="font-sans">
 
   <!-- Header / Navbar -->
-<!-- Header / Navbar -->
-<nav class="fixed w-full z-50 bg-gray-900/90 backdrop-blur shadow-lg">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+  <!-- Header / Navbar -->
+  <nav class="fixed w-full z-50 bg-gray-900/90 backdrop-blur shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-   <a href="#" class="flex items-center justify-center w-12 h-12 relative">
-  <div class="relative w-10 h-10 bg-cyan-400 rounded-full flex items-center justify-center text-gray-900 font-bold text-lg shadow-lg animate-pulse">
-    DP
-  </div>
-</a>
+      <a href="#" class="relative flex items-center justify-center w-14 h-14">
+        <!-- Rotating Border Ring -->
+        <div class="absolute inset-0 rounded-full border-2 border-cyan-400 border-t-transparent animate-spin-slow">
+        </div>
 
-    <!-- Navigation links (desktop) -->
-    <div class="hidden md:flex space-x-6 text-gray-300 font-medium">
-      <a href="#about" class="hover:text-cyan-400 transition-colors duration-300">About</a>
-      <a href="#skills" class="hover:text-cyan-400 transition-colors duration-300">Skills</a>
-      <a href="#projects" class="hover:text-cyan-400 transition-colors duration-300">Projects</a>
-      <a href="#experience" class="hover:text-cyan-400 transition-colors duration-300">Experience</a>
-      <a href="#certifications" class="hover:text-cyan-400 transition-colors duration-300">Certifications</a>
-      <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300">Contact</a>
+        <!-- Inner Circle -->
+        <div
+          class="relative w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center shadow-[0_0_20px_#22d3ee]">
+          <span class="text-cyan-400 font-bold text-lg">DP</span>
+        </div>
+      </a>
+
+      <!-- Add this animation to your CSS -->
+      <style>
+        @keyframes spin-slow {
+          0% {
+            transform: rotate(0deg);
+          }
+
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+
+        .animate-spin-slow {
+          animation: spin-slow 5s linear infinite;
+        }
+      </style>
+
+
+
+      <!-- Navigation links (desktop) -->
+      <div class="hidden md:flex space-x-6 text-gray-300 font-medium">
+        <a href="#about" class="hover:text-cyan-400 transition-colors duration-300">About</a>
+        <a href="#skills" class="hover:text-cyan-400 transition-colors duration-300">Skills</a>
+        <a href="#projects" class="hover:text-cyan-400 transition-colors duration-300">Projects</a>
+        <a href="#experience" class="hover:text-cyan-400 transition-colors duration-300">Experience</a>
+        <a href="#certifications" class="hover:text-cyan-400 transition-colors duration-300">Certifications</a>
+        <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300">Contact</a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button id="menu-btn" class="text-gray-300 focus:outline-none">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <!-- Mobile menu button -->
-    <div class="md:hidden flex items-center">
-      <button id="menu-btn" class="text-gray-300 focus:outline-none">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
-             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-3 text-gray-300 font-medium bg-gray-900/95">
+      <a href="#about" class="block hover:text-cyan-400 transition-colors duration-300">About</a>
+      <a href="#skills" class="block hover:text-cyan-400 transition-colors duration-300">Skills</a>
+      <a href="#projects" class="block hover:text-cyan-400 transition-colors duration-300">Projects</a>
+      <a href="#experience" class="block hover:text-cyan-400 transition-colors duration-300">Experience</a>
+      <a href="#certifications" class="block hover:text-cyan-400 transition-colors duration-300">Certifications</a>
+      <a href="#contact" class="block hover:text-cyan-400 transition-colors duration-300">Contact</a>
     </div>
-  </div>
+  </nav>
 
-  <!-- Mobile menu (hidden by default) -->
-  <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-3 text-gray-300 font-medium bg-gray-900/95">
-    <a href="#about" class="block hover:text-cyan-400 transition-colors duration-300">About</a>
-    <a href="#skills" class="block hover:text-cyan-400 transition-colors duration-300">Skills</a>
-    <a href="#projects" class="block hover:text-cyan-400 transition-colors duration-300">Projects</a>
-    <a href="#experience" class="block hover:text-cyan-400 transition-colors duration-300">Experience</a>
-    <a href="#certifications" class="block hover:text-cyan-400 transition-colors duration-300">Certifications</a>
-    <a href="#contact" class="block hover:text-cyan-400 transition-colors duration-300">Contact</a>
-  </div>
-</nav>
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-<script>
-  // Mobile menu toggle
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-</script>
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 
 
-  <section class="h-screen relative flex flex-col justify-center items-center bg-gradient-to-r from-cyan-700 to-purple-900 text-white overflow-hidden">
-    
+  <section
+    class="h-screen relative flex flex-col justify-center items-center bg-gradient-to-r from-cyan-700 to-purple-900 text-white overflow-hidden">
+
     <div id="tsparticles" class="absolute top-0 left-0 w-full h-full z-0"></div>
-    
+
     <div class="relative z-10 text-center">
       <h1 class="text-6xl font-bold mb-4 animate__animated animate__fadeInDown">Hi, I'm Dhruhil Patel</h1>
-      
+
       <p class="text-2xl mb-6 h-8">
         <span id="typed-output"></span>
       </p>
-      
-      <a href="#about" class="px-8 py-3 bg-cyan-400 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-cyan-500 animate__animated animate__fadeInUp">Discover More</a>
+
+      <a href="#about"
+        class="px-8 py-3 bg-cyan-400 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-cyan-500 animate__animated animate__fadeInUp">Discover
+        More</a>
     </div>
   </section>
 
-<section id="about" class="max-w-7xl mx-auto px-6 py-16">
-    
-  <!-- Section Heading -->
-  <h2 class="text-5xl font-bold text-center mb-12 text-cyan-400 animate__animated animate__fadeInDown">
-    About Me
-  </h2>
+  <section id="about" class="max-w-7xl mx-auto px-6 py-16">
 
-  <div class="grid lg:grid-cols-3 gap-8 items-start">
-
-    <!-- Profile Picture (Height matches paragraph) -->
-    <div class="flex justify-center">
-      <img src="public/images/Dhruhil_pic.png" alt="D333Patel123" 
-           class="rounded-lg shadow-xl border-2 border-cyan-400 h-full max-h-[380px] object-cover">
-    </div>
-
-    <!-- About Text (Animated) -->
-    <div class="text-lg space-y-4 animate__animated animate__fadeInLeft">
-      <p>
-        Highly motivated and detail-oriented Master’s student in Artificial Intelligence with a strong foundation in data analysis, 
-        machine learning, deep learning, and statistical modeling. Skilled in data preprocessing, exploratory data analysis (EDA), 
-        predictive modeling, and visualization using Python, R, and SQL. Experienced in applying analytical methods to real-world 
-        datasets across agriculture, environment, and business domains. Former web developer with strong programming and problem-solving skills, 
-        now focused on driving data-driven decision-making and AI-powered insights.
-      </p>
-    </div>
-
-    <!-- Education Cards (Animated, Compact) -->
-    <div class="space-y-6 animate__animated animate__fadeInRight">
-      <!-- Master’s Card with Current Badge -->
-      <div class="bg-gray-800 p-4 rounded-xl shadow-xl border border-cyan-400">
-        <div class="flex items-center gap-3">
-          <h4 class="text-xl font-semibold text-cyan-300">Master’s in Artificial Intelligence</h4>
-          <span class="bg-cyan-200 text-cyan-800 text-xs font-medium px-2 py-0.5 rounded">Current</span>
-        </div>
-        <p class="text-gray-400 mt-1">Jönköping University, Sweden</p>
-        <p class="text-gray-300 mt-1">Aug 2024 – Jun 2026</p>
-      </div>
-
-      <!-- Bachelor Card -->
-      <div class="bg-gray-800 p-4 rounded-xl shadow-xl border border-cyan-400">
-        <h4 class="text-xl font-semibold text-cyan-300">Bachelor of Engineering in IT</h4>
-        <p class="text-gray-400 mt-1">Silver Oak College of Engineering, India</p>
-        <p class="text-gray-300 mt-1">Jun 2018 – Jun 2022</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="skills" class="bg-gray-900 py-20">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-5xl font-bold text-center mb-16 text-cyan-400">
-      Skills
+    <!-- Section Heading -->
+    <h2 class="text-5xl font-bold text-center mb-12 text-cyan-400 animate__animated animate__fadeInDown">
+      About Me
     </h2>
 
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
-      <a href="https://www.iso.org/standard/74528.html" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="C">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">C</p>
-      </a>
+    <div class="grid lg:grid-cols-3 gap-8 items-start">
 
-      <a href="https://isocpp.org/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="C++">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">C++</p>
-      </a>
-
-      <a href="https://www.python.org/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Python">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">Python</p>
-      </a>
-
-      <a href="https://www.php.net/manual/en/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="PHP">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">PHP</p>
-      </a>
-
-      <a href="https://www.r-project.org/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://www.r-project.org/logo/Rlogo.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="R">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">R</p>
-      </a>
-
-      <a href="https://www.swi-prolog.org/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://www.svgrepo.com/show/372928/prolog.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Prolog">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">Prolog</p>
-      </a>
-
-      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="HTML">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">HTML</p>
-      </a>
-
-      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="CSS">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">CSS</p>
-      </a>
-
-      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="JavaScript">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">JavaScript</p>
-      </a>
-
-      <a href="https://www.w3schools.com/sql/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="SQL">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">SQL</p>
-      </a>
-
-      <a href="https://laravel.com/docs" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://laravel.com/img/logomark.min.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Laravel">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">Laravel</p>
-      </a>
-
-      <a href="https://docs.djangoproject.com/en/stable/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Django">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">Django</p>
-      </a>
-
-      <a href="https://flask.palletsprojects.com/en/latest/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Flask">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">Flask</p>
-      </a>
-
-      <a href="https://api.jquery.com/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="jQuery">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">jQuery</p>
-      </a>
-
-      <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Bootstrap">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">Bootstrap</p>
-      </a>
-
-      <a href="https://scikit-learn.org/stable/documentation.html" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Scikit-learn">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">Scikit-learn</p>
-      </a>
-
-      <a href="https://www.tensorflow.org/api_docs" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="TensorFlow">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">TensorFlow</p>
-      </a>
-
-      <a href="https://pytorch.org/docs/stable/index.html" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="./public/images/pytorch_logo.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="PyTorch">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">PyTorch</p>
-      </a>
-
-      <a href="https://pandas.pydata.org/docs/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://pandas.pydata.org/static/img/pandas_mark.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Pandas">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">Pandas</p>
-      </a>
-
-      <a href="https://numpy.org/doc/stable/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="./public/images/numpy_logo.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="NumPy">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">NumPy</p>
-      </a>
-
-      <a href="https://matplotlib.org/stable/index.html" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Matplotlib">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">Matplotlib</p>
-      </a>
-
-      <a href="https://dev.mysql.com/doc/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="MySQL">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">MySQL</p>
-      </a>
-
-      <a href="https://www.postgresql.org/docs/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://www.postgresql.org/media/img/about/press/elephant.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="PostgreSQL">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">PostgreSQL</p>
-      </a>
-
-      <a href="https://www.w3.org/TR/sparql11-query/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="public/images/SPARQL_logo.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="SPARQL">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">SPARQL</p>
-      </a>
-
-      <a href="https://git-scm.com/doc" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="./public/images/git_logo.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Git">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">Git</p>
-      </a>
-
-      <a href="https://docs.github.com/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="./public/images/github_logo.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="GitHub">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">GitHub</p>
-      </a>
-
-      <a href="https://learning.postman.com/docs/getting-started/introduction/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Postman">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">Postman</p>
-      </a>
-
-      <a href="https://jupyter.org/" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Jupyter Notebook">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">Jupyter Notebook</p>
-      </a>
-
-      <a href="https://www.knime.com/documentation" target="_blank" class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
-        <img src="public/images/Knime_logo2.png" class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="KNIME">
-        <p class="text-gray-300 font-semibold hover:text-cyan-400">KNIME</p>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-
-
-<section id="projects" class="bg-gray-900 section-padding">
-  <h2 class="text-5xl font-bold text-center mb-12 text-cyan-400">Projects</h2>
-
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
-
-    <!-- DQN Snake Game -->
-    <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
-                hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
-      <div class="w-full h-64 flex justify-center items-center bg-black">
-        <img src="public/images/Snake_game.png" alt="DQN Snake Game"
-             class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
+      <!-- Profile Picture (Height matches paragraph) -->
+      <div class="flex justify-center">
+        <img src="public/images/Dhruhil_pic.png" alt="D333Patel123"
+          class="rounded-lg shadow-xl border-2 border-cyan-400 h-full max-h-[380px] object-cover">
       </div>
-      <!-- Transparent overlay -->
-      <div class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
-                  group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between 
-                  items-center text-center p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-gray-800">
-        <div>
-          <h3 class="text-2xl font-bold text-cyan-300 mb-3">Comparative Study of DQN Variants for the Snake Game</h3>
-          <p class="text-gray-300 mb-6">
-            I developed a Snake game agent using Vanilla, Double, and Dueling DQNs, and found that Dueling DQN learns the most efficiently, achieving the highest scores with stable performance.
-          </p>
+
+      <!-- About Text (Animated) -->
+      <div class="text-lg space-y-4 animate__animated animate__fadeInLeft">
+        <p>
+          Highly motivated and detail-oriented Master’s student in Artificial Intelligence with a strong foundation in
+          data analysis,
+          machine learning, deep learning, and statistical modeling. Skilled in data preprocessing, exploratory data
+          analysis (EDA),
+          predictive modeling, and visualization using Python, R, and SQL. Experienced in applying analytical methods to
+          real-world
+          datasets across agriculture, environment, and business domains. Former web developer with strong programming
+          and problem-solving skills,
+          now focused on driving data-driven decision-making and AI-powered insights.
+        </p>
+      </div>
+
+      <!-- Education Cards (Animated, Compact) -->
+      <div class="space-y-6 animate__animated animate__fadeInRight">
+        <!-- Master’s Card with Current Badge -->
+        <div class="bg-gray-800 p-4 rounded-xl shadow-xl border border-cyan-400">
+          <div class="flex items-center gap-3">
+            <h4 class="text-xl font-semibold text-cyan-300">Master’s in Artificial Intelligence</h4>
+            <span class="bg-cyan-200 text-cyan-800 text-xs font-medium px-2 py-0.5 rounded">Current</span>
+          </div>
+          <p class="text-gray-400 mt-1">Jönköping University, Sweden</p>
+          <p class="text-gray-300 mt-1">Aug 2024 – Jun 2026</p>
         </div>
-        <a href="https://github.com/Dhruhil/Comparative-Study-of-DQN-Variants-for-the-Snake-Game" target="_blank"
-           class="mt-4 px-4 py-2 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow">GitHub</a>
-      </div>
-    </div>
 
-    <!-- YOLOv8 Pallet Detection -->
-    <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
-                hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
-      <div class="w-full h-64 flex justify-center items-center bg-black">
-        <img src="public/images/yolov8.jpg" alt="YOLOv8 Pallet Detection"
-             class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
-      </div>
-      <div class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
-                  group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between 
-                  items-center text-center p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-gray-800">
-        <div>
-          <h3 class="text-2xl font-bold text-cyan-300 mb-3">Deep Learning-Based Detection of Wooden Pallets in public/images Using YOLOv8</h3>
-          <p class="text-gray-300 mb-6">
-            I built a real-time YOLOv8 model to automatically detect and classify EUR and non-EUR pallets, achieving 88% mAP@50 and reliable edge deployment for scalable warehouse automation.
-          </p>
+        <!-- Bachelor Card -->
+        <div class="bg-gray-800 p-4 rounded-xl shadow-xl border border-cyan-400">
+          <h4 class="text-xl font-semibold text-cyan-300">Bachelor of Engineering in IT</h4>
+          <p class="text-gray-400 mt-1">Silver Oak College of Engineering, India</p>
+          <p class="text-gray-300 mt-1">Jun 2018 – Jun 2022</p>
         </div>
       </div>
-    </div>
 
-    <!--  Pest Prediction -->
-    <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
-                hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
-      <div class="w-full h-64 flex justify-center items-center bg-black">
-        <img src="public/images/Jorbru_image.png" alt="Pest Prediction"
-             class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
+    </div>
+  </section>
+
+  <section id="skills" class="bg-gray-900 py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16 text-cyan-400">
+        Skills
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="C">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">C</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="C++">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">C++</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="C++">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">Java</p>
+        </div>
+
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Python">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">Python</p>
+        </div>
+
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="PHP">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">PHP</p>
+        </div>
+
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://www.r-project.org/logo/Rlogo.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="R">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">R</p>
+        </div>
+
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://www.svgrepo.com/show/372928/prolog.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Prolog">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">Prolog</p>
+        </div>
+
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="HTML">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">HTML</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="CSS">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">CSS</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="JavaScript">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">JavaScript</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="SQL">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">SQL</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://laravel.com/img/logomark.min.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Laravel">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">Laravel</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Django">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">Django</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Flask">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">Flask</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="jQuery">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">jQuery</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Bootstrap">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">Bootstrap</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Scikit-learn">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">Scikit-learn</p>
+        </div>
+        <div
+  class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Keras_logo.svg"
+    class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Keras">
+  <p class="text-gray-300 font-semibold hover:text-cyan-400">Keras</p>
+</div>
+
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="TensorFlow">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">TensorFlow</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="./public/images/pytorch_logo.png"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="PyTorch">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">PyTorch</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://pandas.pydata.org/static/img/pandas_mark.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Pandas">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">Pandas</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="./public/images/numpy_logo.png"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="NumPy">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">NumPy</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Matplotlib">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">Matplotlib</p>
+        </div>
+        <div
+  class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+  <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg"
+    class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Seaborn">
+  <p class="text-gray-300 font-semibold hover:text-cyan-400">Seaborn</p>
+</div>
+<div
+  class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+  <img src="./public/images/gymnasium_logo.png"
+    class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Gymnasium">
+  <p class="text-gray-300 font-semibold hover:text-cyan-400">Gymnasium</p>
+</div>
+
+
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="MySQL">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">MySQL</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://www.postgresql.org/media/img/about/press/elephant.png"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="PostgreSQL">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">PostgreSQL</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="public/images/SPARQL_logo.png"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="SPARQL">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">SPARQL</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="./public/images/git_logo.png"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Git">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">Git</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="./public/images/github_logo.png"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="GitHub">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">GitHub</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Postman">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">Postman</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="Jupyter Notebook">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">Jupyter Notebook</p>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-md rounded-xl p-4 flex flex-col items-center text-center border border-gray-700 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300">
+          <img src="public/images/Knime_logo2.png"
+            class="w-14 h-14 mb-2 transition-transform duration-300 hover:scale-110" alt="KNIME">
+          <p class="text-gray-300 font-semibold hover:text-cyan-400">KNIME</p>
+        </div>
+
       </div>
-      <div class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
+    </div>
+  </section>
+
+
+
+  <section id="projects" class="bg-gray-900 section-padding">
+    <h2 class="text-5xl font-bold text-center mb-12 text-cyan-400">Projects</h2>
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+
+      <!-- DQN Snake Game -->
+      <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
+                hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
+        <div class="w-full h-64 flex justify-center items-center bg-black">
+          <img src="public/images/Snake_game.png" alt="DQN Snake Game"
+            class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
+        </div>
+        <!-- Transparent overlay -->
+        <div
+          class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
                   group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between 
                   items-center text-center p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-gray-800">
-        <div>
-          <h3 class="text-2xl font-bold text-cyan-300 mb-3">Jordbrukverket 7/14 Day Pest Prediction</h3>
-          <p class="text-gray-300 mb-6">
-            Built a machine learning pipeline using XGBoost, neural ensembles, and neuroevolution to forecast leaf-spot fungus in winter wheat. Achieved up to R² = 0.81 for 7-day forecasts and R² = 0.67 for 14-day forecasts, leveraging high-resolution NOAA GFS weather data to optimize pest management.
+          <div>
+            <h3 class="text-2xl font-bold text-cyan-300 mb-3">Comparative Study of DQN Variants for the Snake Game</h3>
+            <p class="text-gray-300 mb-6">
+              I developed a Snake game agent using Vanilla, Double, and Dueling DQNs, and found that Dueling DQN learns
+              the most efficiently, achieving the highest scores with stable performance.
+            </p>
+          </div>
+          <a href="https://github.com/Dhruhil/Comparative-Study-of-DQN-Variants-for-the-Snake-Game" target="_blank"
+            class="mt-4 px-4 py-2 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow">GitHub</a>
         </div>
-        <a href="https://github.com/Dhruhil/Jordbrukverket-7-14-day-pest-prediction" target="_blank"
-           class="mt-4 px-4 py-2 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow">GitHub</a>
       </div>
-    </div>
 
-    <!--  PLASTISENSE -->
-    <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
+      <!-- YOLOv8 Pallet Detection -->
+      <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
                 hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
-      <div class="w-full h-64 flex justify-center items-center bg-black">
-        <img src="public/images/Plastisense_logo.png" alt="Plastisense Project"
-             class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
-      </div>
-      <div class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
+        <div class="w-full h-64 flex justify-center items-center bg-black">
+          <img src="public/images/yolov8.jpg" alt="YOLOv8 Pallet Detection"
+            class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
+        </div>
+        <div
+          class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
                   group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between 
                   items-center text-center p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-gray-800">
-        <div>
-          <h3 class="text-2xl font-bold text-cyan-300 mb-3">PLASTISENSE AI-based Plastic Waste Detection System</h3>
-          <p class="text-gray-300 mb-6">
-            Developed PlastiSense, an AI system using XGBoost to detect plastic contamination in water bodies in real time, with automated email alerts to authorities.
-          </p>
+          <div>
+            <h3 class="text-2xl font-bold text-cyan-300 mb-3">Deep Learning-Based Detection of Wooden Pallets in
+              public/images Using YOLOv8</h3>
+            <p class="text-gray-300 mb-6">
+              I built a real-time YOLOv8 model to automatically detect and classify EUR and non-EUR pallets, achieving
+              88% mAP@50 and reliable edge deployment for scalable warehouse automation.
+            </p>
+          </div>
         </div>
-        <a href="https://github.com/Dhruhil/Plastisense" target="_blank"
-           class="mt-4 px-4 py-2 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow">GitHub</a>
       </div>
-    </div>
 
-    <!--  Movie Recommendation -->
-    <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
+      <!--  Pest Prediction -->
+      <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
                 hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
-      <div class="w-full h-64 flex justify-center items-center bg-black">
-        <img src="public/images/Movie_pic.png" alt="Movie Recommendation System"
-             class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
-      </div>
-      <div class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
+        <div class="w-full h-64 flex justify-center items-center bg-black">
+          <img src="public/images/Jorbru_image.png" alt="Pest Prediction"
+            class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
+        </div>
+        <div
+          class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
                   group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between 
                   items-center text-center p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-gray-800">
-        <div>
-          <h3 class="text-2xl font-bold text-cyan-300 mb-3">Movie Recommendation System Leveraging Semantic Web and Knowledge Graphs</h3>
-          <p class="text-gray-300 mb-6">
-            Built a movie recommendation system using knowledge graphs and Semantic Web. Provides personalized suggestions based on actors, directors, genres, and IMDb ratings via an interactive drag-and-drop interface.
-          </p>
+          <div>
+            <h3 class="text-2xl font-bold text-cyan-300 mb-3">Jordbrukverket 7/14 Day Pest Prediction</h3>
+            <p class="text-gray-300 mb-6">
+              Built a machine learning pipeline using XGBoost, neural ensembles, and neuroevolution to forecast
+              leaf-spot fungus in winter wheat. Achieved up to R² = 0.81 for 7-day forecasts and R² = 0.67 for 14-day
+              forecasts, leveraging high-resolution NOAA GFS weather data to optimize pest management.
+          </div>
+          <a href="https://github.com/Dhruhil/Jordbrukverket-7-14-day-pest-prediction" target="_blank"
+            class="mt-4 px-4 py-2 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow">GitHub</a>
         </div>
-        <a href="https://github.com/Dhruhil/Movie-Recommendations-System" target="_blank"
-           class="mt-4 px-4 py-2 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow">GitHub</a>
       </div>
-    </div>
 
-    <!-- Ebit Profit Analysis -->
-    <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
+      <!--  PLASTISENSE -->
+      <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
                 hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
-      <div class="w-full h-64 flex justify-center items-center bg-black">
-        <img src="public/images/KNIME.png" alt="Ebit Profit Analysis"
-             class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
-      </div>
-      <div class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
+        <div class="w-full h-64 flex justify-center items-center bg-black">
+          <img src="public/images/Plastisense_logo.png" alt="Plastisense Project"
+            class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
+        </div>
+        <div
+          class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
                   group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between 
                   items-center text-center p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-gray-800">
-        <div>
-          <h3 class="text-2xl font-bold text-cyan-300 mb-3">Unveiling Profit Drivers and Industry Insights for Ebit Company</h3>
-          <p class="text-gray-300 mb-6">
-            Analyzed Ebit’s client and industry data using K-means clustering and a custom client-score formula. Identified profitability drivers, high-performing industries, and optimal client engagement strategies with actionable insights via KNIME workflow.
-          </p>
+          <div>
+            <h3 class="text-2xl font-bold text-cyan-300 mb-3">PLASTISENSE AI-based Plastic Waste Detection System</h3>
+            <p class="text-gray-300 mb-6">
+              Developed PlastiSense, an AI system using XGBoost to detect plastic contamination in water bodies in real
+              time, with automated email alerts to authorities.
+            </p>
+          </div>
+          <a href="https://github.com/Dhruhil/Plastisense" target="_blank"
+            class="mt-4 px-4 py-2 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow">GitHub</a>
         </div>
       </div>
-    </div>
 
-    <!--  Cocoon E-commerce -->
-    <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
+      <!--  Movie Recommendation -->
+      <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
                 hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
-      <div class="w-full h-64 flex justify-center items-center bg-black">
-        <img src="public/images/Coocon_pic.png" alt="Cocoon E-commerce"
-             class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
-      </div>
-      <div class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
+        <div class="w-full h-64 flex justify-center items-center bg-black">
+          <img src="public/images/Movie_pic.png" alt="Movie Recommendation System"
+            class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
+        </div>
+        <div
+          class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
                   group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between 
                   items-center text-center p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-gray-800">
-        <div>
-          <h3 class="text-2xl font-bold text-cyan-300 mb-3">Cocoon – E-commerce Shoe Store</h3>
-          <p class="text-gray-300 mb-6">
-            Dynamic e-commerce platform with product filtering, live cart, Stripe payments, user authentication, and admin panel.
-          </p>
+          <div>
+            <h3 class="text-2xl font-bold text-cyan-300 mb-3">Movie Recommendation System Leveraging Semantic Web and
+              Knowledge Graphs</h3>
+            <p class="text-gray-300 mb-6">
+              Built a movie recommendation system using knowledge graphs and Semantic Web. Provides personalized
+              suggestions based on actors, directors, genres, and IMDb ratings via an interactive drag-and-drop
+              interface.
+            </p>
+          </div>
+          <a href="https://github.com/Dhruhil/Movie-Recommendations-System" target="_blank"
+            class="mt-4 px-4 py-2 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow">GitHub</a>
         </div>
       </div>
-    </div>
 
-  </div>
-</section>
+      <!-- Ebit Profit Analysis -->
+      <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
+                hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
+        <div class="w-full h-64 flex justify-center items-center bg-black">
+          <img src="public/images/KNIME.png" alt="Ebit Profit Analysis"
+            class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
+        </div>
+        <div
+          class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
+                  group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between 
+                  items-center text-center p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-gray-800">
+          <div>
+            <h3 class="text-2xl font-bold text-cyan-300 mb-3">Unveiling Profit Drivers and Industry Insights for Ebit
+              Company</h3>
+            <p class="text-gray-300 mb-6">
+              Analyzed Ebit’s client and industry data using K-means clustering and a custom client-score formula.
+              Identified profitability drivers, high-performing industries, and optimal client engagement strategies
+              with actionable insights via KNIME workflow.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!--  Cocoon E-commerce -->
+      <div class="relative group rounded-2xl overflow-hidden border border-cyan-400 shadow-2xl 
+                hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-500 bg-black">
+        <div class="w-full h-64 flex justify-center items-center bg-black">
+          <img src="public/images/Coocon_pic.png" alt="Cocoon E-commerce"
+            class="object-contain h-full w-full transition-transform duration-700 group-hover:scale-105" />
+        </div>
+        <div
+          class="absolute inset-0 bg-black/75 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-10 
+                  group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between 
+                  items-center text-center p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-gray-800">
+          <div>
+            <h3 class="text-2xl font-bold text-cyan-300 mb-3">Cocoon – E-commerce Shoe Store</h3>
+            <p class="text-gray-300 mb-6">
+              Dynamic e-commerce platform with product filtering, live cart, Stripe payments, user authentication, and
+              admin panel.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <section id="experience" class="bg-gray-900 section-padding">
     <h2 class="text-5xl font-bold text-center mb-12 text-cyan-400">Experience</h2>
@@ -460,44 +618,50 @@
 
       <div class="bg-gray-800 p-6 rounded-xl shadow-xl transition-all duration-300">
         <div class="flex items-center mb-4">
-          <img src="public/images/GCRI_logo.jpeg" alt="Gujarat Cancer & Research Institute" class="w-12 h-12 mr-3 rounded-full bg-white">
+          <img src="public/images/GCRI_logo.jpeg" alt="Gujarat Cancer & Research Institute"
+            class="w-12 h-12 mr-3 rounded-full bg-white">
           <div>
             <h3 class="text-xl font-semibold text-cyan-300">Computer Engineer</h3>
             <p class="text-gray-400">Gujarat Cancer & Research Institute</p>
           </div>
         </div>
         <p class="text-gray-300 mb-2">Mar 2024 - Jun 2024 | Gujarat, India</p>
-        <p class="text-gray-300">Responsible for managing and optimizing computer systems to ensure reliable performance.</p>
+        <p class="text-gray-300">Responsible for managing and optimizing computer systems to ensure reliable
+          performance.</p>
       </div>
 
       <div class="bg-gray-800 p-6 rounded-xl shadow-xl transition-all duration-300">
         <div class="flex items-center mb-4">
-          <img src="public/images/Helicore_logo.jpeg" alt="Helicore Info Pvt Ltd" class="w-12 h-12 mr-3 rounded-full bg-white">
+          <img src="public/images/Helicore_logo.jpeg" alt="Helicore Info Pvt Ltd"
+            class="w-12 h-12 mr-3 rounded-full bg-white">
           <div>
             <h3 class="text-xl font-semibold text-cyan-300">Web Developer</h3>
             <p class="text-gray-400">Helicore Info Pvt Ltd</p>
           </div>
         </div>
         <p class="text-gray-300 mb-2">Aug 2022 - Aug 2023 | Gujarat, India</p>
-        <p class="text-gray-300">Focused on IT integration, problem solving, and full-stack web development projects. Skills applied: HTML, CSS, JavaScript, PHP, MySQL.</p>
+        <p class="text-gray-300">Focused on IT integration, problem solving, and full-stack web development projects.
+          Skills applied: HTML, CSS, JavaScript, PHP, MySQL.</p>
       </div>
 
       <div class="bg-gray-800 p-6 rounded-xl shadow-xl transition-all duration-300">
         <div class="flex items-center mb-4">
-          <img src="public/images/icreative_logo.png" alt="iCreative Technologies" class="w-12 h-12 mr-3 rounded-full bg-white">
+          <img src="public/images/icreative_logo.png" alt="iCreative Technologies"
+            class="w-12 h-12 mr-3 rounded-full bg-white">
           <div>
             <h3 class="text-xl font-semibold text-cyan-300">Trainee PHP (Internship)</h3>
             <p class="text-gray-400">iCreative Technologies</p>
           </div>
         </div>
         <p class="text-gray-300 mb-2">Feb 2022 - Jul 2022 | Gujarat, India</p>
-        <p class="text-gray-300">Developed dynamic web applications, integrated payment gateways, and optimized front-end performance using PHP, Laravel, and JavaScript.</p>
+        <p class="text-gray-300">Developed dynamic web applications, integrated payment gateways, and optimized
+          front-end performance using PHP, Laravel, and JavaScript.</p>
       </div>
 
     </div>
   </section>
 
-  <section id="certifications" class="bg-gray-900 section-padding"> 
+  <section id="certifications" class="bg-gray-900 section-padding">
     <h2 class="text-5xl font-bold text-center mb-12 text-cyan-400">Licenses & Certifications</h2>
     <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
 
@@ -509,7 +673,9 @@
             <p class="text-gray-400">KNIME | Issued Oct 2025</p>
           </div>
         </div>
-        <p class="text-gray-300 mb-2">Certification demonstrating foundational skills in KNIME Analytics Platform, including data import, ETL workflow design, data preprocessing, visualization components, and basic reporting techniques.</p>
+        <p class="text-gray-300 mb-2">Certification demonstrating foundational skills in KNIME Analytics Platform,
+          including data import, ETL workflow design, data preprocessing, visualization components, and basic reporting
+          techniques.</p>
       </div>
 
       <div class="bg-gray-800 p-6 rounded-xl shadow-xl transition-all duration-300">
@@ -521,30 +687,77 @@
             <p class="text-gray-400">PADCP | Issued Mar 2024</p>
           </div>
         </div>
-        <p class="text-gray-300 mb-2">Demonstrates proficiency in Python programming, including object-oriented programming, data handling, and basic application development.</p>
+        <p class="text-gray-300 mb-2">Demonstrates proficiency in Python programming, including object-oriented
+          programming, data handling, and basic application development.</p>
       </div>
 
       <div class="bg-gray-800 p-6 rounded-xl shadow-xl transition-all duration-300">
         <div class="flex items-center mb-4">
-          <img src="public/images/Tops_logo.jpeg" alt="Masters in Computer Science" class="w-12 h-12 mr-3 rounded-full bg-white">
+          <img src="public/images/Tops_logo.jpeg" alt="Masters in Computer Science"
+            class="w-12 h-12 mr-3 rounded-full bg-white">
           <div>
             <h3 class="text-xl font-semibold text-cyan-300">Masters in Computer Science</h3>
             <p class="text-gray-400">TOPS Technologies Pvt. Ltd | Issued Sep 2023</p>
           </div>
         </div>
-        <p class="text-gray-300 mb-2">Advanced knowledge in programming languages, web development, and full-stack development gained through a Master’s in Computer Science, enabling the creation of efficient, scalable, and user-friendly applications.</p>
+        <p class="text-gray-300 mb-2">Advanced knowledge in programming languages, web development, and full-stack
+          development gained through a Master’s in Computer Science, enabling the creation of efficient, scalable, and
+          user-friendly applications.</p>
       </div>
 
     </div>
   </section>
 
- <section id="contact" class="max-w-7xl mx-auto px-6 text-center section-padding">
+  <!-- <section id="contact" class="max-w-7xl mx-auto px-6 text-center section-padding">
   <h2 class="text-5xl font-bold mb-8 text-cyan-400">Contact</h2>
   <p class="mb-4 text-lg text-gray-300">
     Gmail: <a href="mailto:pateldhruhil2612@gmail.com" class="text-cyan-400 underline hover:text-cyan-300">pateldhruhil2612@gmail.com</a>
   </p>
-  
-</section>
+  <a href="https://www.linkedin.com/in/dhruhil-patel123/"
+         target="_blank"
+         class="group flex flex-col items-center space-y-2">
+        <div class="bg-gray-800 p-4 rounded-full shadow-lg group-hover:shadow-cyan-400/50 transition-all duration-300 transform group-hover:scale-110">
+          <i class="fa-brands fa-linkedin text-cyan-400 text-2xl"></i>
+        </div>
+        <span class="text-gray-300 group-hover:text-cyan-300 transition-colors duration-300">LinkedIn</span>
+      </a>
+</section> -->
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gray-900 section-padding">
+    <h2 class="text-5xl font-bold text-center mb-12 text-cyan-400">Contact</h2>
+
+    <div class="max-w-3xl mx-auto text-center space-y-10">
+      <!-- Email (text only) -->
+      <div>
+        <a href="mailto:pateldhruhil2612@gmail.com"
+          class="text-gray-300 text-xl font-medium hover:text-cyan-300 transition-colors duration-300">
+          pateldhruhil2612@gmail.com
+        </a>
+      </div>
+
+      <!-- Social Links (GitHub + LinkedIn) -->
+      <div class="flex justify-center gap-12">
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/dhruhil-patel-0a62821a2/" target="_blank"
+          class="group flex flex-col items-center space-y-2">
+          <div
+            class="bg-gray-800 p-4 rounded-full shadow-md transition-transform duration-300 transform group-hover:scale-110 group-hover:shadow-[0_0_20px_#22d3ee]">
+            <i
+              class="fa-brands fa-linkedin-in text-cyan-400 text-2xl transition-colors duration-300 group-hover:text-cyan-300"></i>
+          </div>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/Dhruhil" target="_blank" class="group flex flex-col items-center space-y-2">
+          <div
+            class="bg-gray-800 p-4 rounded-full shadow-md transition-transform duration-300 transform group-hover:scale-110 group-hover:shadow-[0_0_20px_#22d3ee]">
+            <i
+              class="fa-brands fa-github text-cyan-400 text-2xl transition-colors duration-300 group-hover:text-cyan-300"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
 
 
@@ -561,7 +774,7 @@
       strings: [
         'AI Master’s Student',
         'Machine Learning and Deep Learning Enthusiast',
-        'Data Science', 
+        'Data Science',
         'Web Developer',
         'Full-Stack Developer'
       ],
@@ -578,7 +791,7 @@
       fpsLimit: 60,
       interactivity: {
         events: {
-          onHover: {  
+          onHover: {
             enable: true,
             mode: "repulse", // 'grab', 'bubble', 'repulse'
           },
@@ -636,4 +849,5 @@
     });
   </script>
 </body>
+
 </html>
